@@ -1,0 +1,85 @@
+*, html {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, hsl(254, 100%, 14%), hsl(257, 26%, 22%));;
+    overflow: hidden;
+}
+.clock {
+    background-color: white;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    position: relative;
+    border: 2px solid black;
+}
+.clock .number {
+    --rotation: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform: rotate(var(--rotation));
+    font-size: x-large;
+    font-weight: 600;
+}
+.clock .number1 { --rotation: 30deg }
+.clock .number2 { --rotation: 60deg }
+.clock .number3 { --rotation: 90deg }
+.clock .number4 { --rotation: 120deg }
+.clock .number5 { --rotation: 150deg }
+.clock .number6 { --rotation: 180deg }
+.clock .number7 { --rotation: 210deg }
+.clock .number8 { --rotation: 240deg }
+.clock .number9 { --rotation: 270deg }
+.clock .number10 { --rotation: 300deg }
+.clock .number11 { --rotation: 330deg }
+.clock .number12 { --rotation: 0deg }
+
+.clock .hand {
+    --rotation: 0;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    background-color: black;
+    transform-origin: bottom;
+    border: 1px solid white;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    z-index: 11;
+    transform: translateX(-50%) rotate(calc(var(--rotation)* 1deg));
+}
+.clock::after{
+    content: '';
+    background-color: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 24px;
+    height: 24px;
+    z-index: 11;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+.clock .hand.seconds {
+    width: 2px;
+    height: 40%;
+    background-color: red;
+}
+.clock .hand.minutes {
+    width: 7px;
+    height: 40%;
+    background-color: black;
+}
+.clock .hand.hours {
+    width: 12px;
+    height: 32%;
+    background-color: black;
+}
+
